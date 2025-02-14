@@ -1,0 +1,195 @@
+body {
+    background-image: url(San\ V.avif);
+    background-size: cover; /* Ajusta la imagen para cubrir toda la pantalla */
+    background-position: center; /* Centra la imagen */
+    background-repeat: no-repeat; 
+    background-color: #f5c2c4;
+    margin: 0;
+    overflow: hidden; /* E
+    vita el scroll al generar corazones */
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 3rem;
+    height: 100vh;
+    margin-top: 70px;
+}
+
+.container-letter {
+    position: relative;
+    margin-top: 80px;
+    opacity: 1 !important;
+    z-index: 10;
+}
+
+.cover {
+    pointer-events: none; 
+    position: absolute;
+    border-left: 200px solid transparent;
+    border-right: 200px solid transparent;
+    border-top: 100px solid rgb(245, 100, 107);
+    border-bottom: 100px solid transparent;
+    transform-origin: top;
+    transition: transform .75s;
+}
+
+.paper {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    justify-content: space-between;
+    padding: 1rem;
+    line-height: 1.4rem;
+    transition: transform 1.5s ease-in-out;
+    z-index: -1;
+    background: rgb(240, 220, 192);
+    width: calc(400px - 2rem);
+    height: calc(200px - 2rem);
+    opacity: 0;
+}
+.image-container {
+    flex-shrink: 0;
+    text-align: center;
+    opacity: 1 !important;
+    z-index: 10;
+}
+
+.image-container img {
+    z-index: -1;
+    margin-left: 17px;
+    width: 60px;
+    height: auto;
+    display: block;
+    margin-bottom: 3px;
+}
+.btn-toca {
+   
+    background: #ff989e;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    border: 1px solid white;
+      cursor: pointer;
+      z-index: 10;
+      opacity: 1 !important;
+      z-index: 100;
+    
+}
+.btn-toca:hover {
+    background: #f3787c !important;
+    opacity: 1 !important;
+    z-index: 100;
+}
+
+.open-paper {
+    transform: translateY(-180px);
+    opacity: 1;
+
+}
+
+.letter {
+    border-left: 200px solid #ff989e;
+    border-right: 200px solid #ff989e;
+    border-top: 100px solid transparent;
+    border-bottom: 100px solid #ec7d82;
+}
+
+.options {
+    display: flex;
+    gap: 5rem;
+}
+
+.options button {
+    color: white;
+    font-weight: 600;
+    border-radius: 3px;
+    background: #ff989e;
+    padding: 0.5rem 1rem;
+    border: 1px solid white;
+    cursor: pointer;
+} 
+
+.options button:hover {
+    background: #f3787c;
+}
+
+/* Contenedor de corazones */
+.hearts-container {
+    z-index: 11;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; 
+    overflow: hidden;
+}
+
+/* Corazones */
+.heart {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-color: rgb(224, 36, 108);
+    transform: rotate(-45deg);
+    opacity: 0.8;
+    animation: float-up 5s linear infinite;
+}
+
+/* Parte superior redonda */
+.heart::before,
+.heart::after {
+    content: "";
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-color:rgb(224, 36, 108);
+    border-radius: 50%;
+}
+
+.heart::before {
+    top: -20px;
+    left: 0;
+}
+
+.heart::after {
+    top: 0;
+    left: 20px;
+}
+
+/* Animación de flotación */
+@keyframes float-up {
+    from {
+        transform: translateY(0) rotate(-45deg);
+        opacity: 3;
+    }
+    to {
+        transform: translateY(-900px) rotate(-95deg);
+        opacity: 0;
+    }
+}
+.franja {
+    position: relative;
+    display: flex;
+    align-items:flex-end;
+    justify-content: center;
+    margin-top: 20px;
+}
+.franja-princesa {
+    position: fixed; /* Para mantenerla fija */
+    top: 30px; /* Posición desde arriba */
+    width: 100%; /* Cubre toda la anchura */
+    text-align: center; /* Centra el texto */
+    background-color: #ff989e; /* Color rosado similar al usado anteriormente */
+}
+
+.franja-princesa h2 {
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    font-size: 45px;
+    color: white; /* Color blanco para el texto */
+}

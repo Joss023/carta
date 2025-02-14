@@ -1,0 +1,176 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&display=swap');
+
+body {
+    background-image: url(San\ V.avif);
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* 🎀 Contenedor del título */
+.titulo-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+/* 🎀 Nudo del lazo (centro) */
+.nudo {
+    background-color: pink;
+    width: 260px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+/* 🎀 Texto dentro del nudo */
+.nudo span {
+    margin-left: 10px;
+    margin-right: 4px;
+    font-style: italic;
+    font-size: 28px;
+    font-weight: bold;
+    color: white;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* 🎀 Alas del lazo (las cintas a los lados) */
+.lazo {
+    position: absolute;
+    width: 120px;
+    height: 60px;
+    background-color: pink;
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 50%;
+}
+
+/* 🎀 Cinta izquierda */
+.lazo.izquierda {
+    left: -110px;
+    transform: rotate(-20deg);
+}
+
+/* 🎀 Cinta derecha */
+.lazo.derecha {
+    right: -110px;
+    transform: rotate(20deg);
+}
+
+/* 🎀 Efecto de sombra para dar volumen */
+.lazo::before,
+.lazo::after {
+    content: "";
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background: rgba(255, 182, 193, 0.7);
+    border-radius: 50%;
+}
+
+.lazo.izquierda::before {
+    right: -30px;
+    top: 10px;
+}
+
+.lazo.derecha::before {
+    left: -30px;
+    top: 10px;
+}
+
+
+.container {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.hoja {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    width: 150px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+
+.hoja:hover {
+    animation: shake 0.2s infinite alternate;
+}
+
+@keyframes shake {
+    0% { transform: rotate(-2deg); }
+    100% { transform: rotate(2deg); }
+}
+
+.hoja img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.texto {
+    font-size: 16px;
+    font-weight: bold;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.hoja.activa {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    height: 350px;
+    z-index: 10;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+.hoja.activa .texto {
+    opacity: 1;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: none;
+    z-index: 5;
+}
+.texto {
+    
+    font-style: italic; /* Para texto en cursiva */
+    color: #b6717d; /* Color dorado */
+    /* Fuente elegante (opcional) */
+}
+
+
+
+/* Importación de Google Fonts para el título */
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
